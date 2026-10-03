@@ -1,0 +1,28 @@
+# Git
+.git/
+.gitignore
+.github/
+
+# Environment files & Secrets
+.env
+.env.*
+.env.local
+*.env
+!.env.example
+
+# Frontend artifacts
+smarthire-frontend/node_modules/
+smarthire-frontend/dist/
+smarthire-frontend/.oxlintrc.json
+
+# Backend artifacts
+smarthire-backend/target/
+smarthire-backend/data/
+smarthire-backend/*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

@@ -21,6 +21,7 @@ RUN rm -f target/*.original
 # Run the application
 FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY --from=backend-build /app/target/*.jar app.jar
+RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+COPY --from=backend-build /app/target/smarthire-backend-1.0.0.jar app.jar
 EXPOSE 8080
 CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar app.jar"]
